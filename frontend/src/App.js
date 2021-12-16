@@ -19,7 +19,19 @@ function App() {
         }}>Read From Database</button>
 
         <button onClick={()=>{
-          fetch("http://127.0.0.1:5000/api/db", { method: "POST" })
+          fetch("http://127.0.0.1:5000/api/db", 
+            { method: "POST",
+              headers: {
+                'Content-Type': 'text/plain'
+              }, 
+              body: JSON.stringify({
+                'type': 'users',
+                'data': {
+                  'name': 'pTEST',
+                  'birth': '2005-12-14'
+                }
+              })
+          })
           .then(status => status.json())
           .then(status => console.log(status))
 

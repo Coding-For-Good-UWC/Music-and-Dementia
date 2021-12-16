@@ -27,7 +27,8 @@ def db():
 		response.headers.add('Access-Control-Allow-Origin', '*')
 		return response
 	else:
-		print(request.data)
+		if (request.is_json):
+			print(request.get_json())
 		conn = mysql.connect()
 		cursor = conn.cursor()
 		cursor.execute("INSERT INTO users (name, birth) VALUES ('TEST', '2021-12-14')")
