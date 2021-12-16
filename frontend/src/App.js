@@ -10,16 +10,19 @@ function App() {
         </h1>
         <p id="test">Data Not Loaded</p>
         <button onClick={()=>{
-          fetch("http://127.0.0.1:5000/api/read_db")
+          fetch("http://127.0.0.1:5000/api/db", { method: "GET" })
           .then(res => res.json())
           .then(data => {
             var text = document.getElementById("test");
-            text.innerHTML = "Welcome, " + data["name"];
+            text.innerHTML = "Welcome, " + data['name'];
           })
         }}>Read From Database</button>
 
         <button onClick={()=>{
-          fetch("http://127.0.0.1:5000/api/write_db")
+          fetch("http://127.0.0.1:5000/api/db", { method: "POST" })
+          .then(status => status.json())
+          .then(status => console.log(status))
+
         }}>Write To Database</button>
 
       </header>
