@@ -1,1 +1,32 @@
 /* CSS FOR LOGIN FORM */
+body{
+    background-color: #f1faee;
+    font-family:  'Trebuchet MS';
+}
+
+input{
+    width: 30% !important;
+    padding: 12px 20px ;
+    margin: 1%;
+    border-radius: 10px;
+    background-color: #a8dadc;
+    border: 2px solid #a8dadc;
+}
+
+::placeholder{
+    color: #7ca7a9;
+}
+
+button{
+    background-color: #457b9d;
+    border: 2px solid #457b9d;
+    border-radius: 10px;
+    color: #a8dadc;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#logincolumn{
+    text-align: center;
+    margin: 10px;
+}
