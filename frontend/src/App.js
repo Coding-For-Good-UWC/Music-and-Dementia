@@ -19,7 +19,7 @@ function App() {
         <Route path='/signup' element={ <SignupPage /> } />
         <Route path='/register' element={ <PatientRegistration /> } />
         <Route path='/dashboard' element={ <CaregiverDashboard /> } />
-        <Route path='/dashboard' element={ <PatientPage /> } />
+        <Route path='/patient' element={ <PatientPage /> } />
       </Routes>
     </div>
   );
