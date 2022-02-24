@@ -11,7 +11,7 @@ function MainNavigation (props)
                     <Link to="/">Show Patients</Link>
                 </li> */}
                 <li>
-                    <Link to="/">New Patient</Link>
+                    <Link to="/registerPatient">New Patient</Link>
                 </li>
             </ul>
         </nav>

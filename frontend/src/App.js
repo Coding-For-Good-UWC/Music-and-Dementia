@@ -1,14 +1,10 @@
 import { Routes, Route } from 'react-router-dom'; 
 
 import LandingPage from './pages/LandingPage'; 
-
 import LoginPage from './pages/LoginPage'; 
 import SignupPage from './pages/SignupPage'; 
-
 import CaregiverDashboard from './pages/CaregiverDashboard'; 
-
 import PatientPage from './pages/PatientPage'; 
-
 import PatientRegistration from './pages/PatientRegistration'; 
 
 function App() 
@@ -26,16 +22,3 @@ function App()
 }
 
 export default App;
-
-
-// import './App.css';
-
-// function App() {
-//   return (
-//     <div className="App">
-      
-//     </div>
-//   );
-// }
-
-// export default App;
