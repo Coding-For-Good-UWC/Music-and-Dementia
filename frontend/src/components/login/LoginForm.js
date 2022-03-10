@@ -29,34 +29,36 @@ function LoginForm (props)
     }
 
     return <div>
-    <Container>
-    <form className={classes.form} onSubmit={SubmitHandler}>
+    <div className="col justify-content-md-center mx-auto px-5 py-3">
+        <form className={classes.form} onSubmit={SubmitHandler}>
 
-<Row className="justify-content-md-center" fluid="md">
-    {/* <label htmlFor='username'>Email</label> */}
-    <input type="email" placeholder = "Email" required id="username" ref={usernameInputRef} />
+        <Row className="justify-content-md-center" fluid="md">
+            {/* <label htmlFor='username'>Email</label> */}
+            <input type="email" placeholder = "Email" required id="username" ref={usernameInputRef} />
 
-</Row>
-
-
-
-<Row className="justify-content-md-center">
-       {/* <label htmlFor='password'>Password</label> */}
-       <input type="password" placeholder = "Password" required id="password" ref={passwordInputRef} />
-
-
-</Row>
-<Row className="justify-content-md-center">
-    <Col xs lg="2" id={classes.logincolumn}>    
-    <button>Login</button>
-</Col>
-</Row>
-
-</form>
-</Container>
-    <br />
-    <p>Don't have an account?</p>
-    <Link to="/signup">Signup</Link>
+        </Row>
+        <Row className="justify-content-md-center">
+            {/* <label htmlFor='password'>Password</label> */}
+            <input type="password" placeholder = "Password" required id="password" ref={passwordInputRef} />
+        </Row>
+        <Row className="justify-content-md-center">
+            <Col xs lg="2" id={classes.logincolumn}>    
+                <button>Login</button>
+            </Col>
+        </Row>
+        <Row className="justify-content-md-center">
+            <Col xs lg="3" id={classes.logincolumn}>    
+                <h4>Don't have an account?</h4>
+            </Col>
+        </Row>
+        <Row className="justify-content-md-center">  
+            <Col xs lg="2" id={classes.logincolumn}>        
+                <Link to="/signup"><h4>Signup</h4></Link>
+            </Col>
+        </Row>
+        </form>
+        <br />
+    </div>
 </div>; 
 }
 

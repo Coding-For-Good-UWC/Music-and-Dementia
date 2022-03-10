@@ -4,6 +4,7 @@ body{
 }
 
 input{
+    height: 80px;
     width: 30% !important;
     padding: 12px 20px ;
     margin: 1%;
@@ -23,9 +24,16 @@ button{
     color: #a8dadc;
     padding-left: 50px;
     padding-right: 50px;
+    font-size: 25px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 #logincolumn{
     text-align: center;
     margin: 10px;
+}
+
+Link{
+    font-size: 50px;
 }
