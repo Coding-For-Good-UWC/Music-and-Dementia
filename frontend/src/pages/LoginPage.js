@@ -23,17 +23,15 @@ function LoginPage ()
         }); 
     }
 
-    return 
-    <section>
+    return <section>
         <Container>
-            <Row className="justify-content-md-center" fluid="md">
-                <Col id={classes.heading}>
-                <h1>Login</h1>
-                </Col>
-            </Row>
+        <Row className="justify-content-md-center" fluid="md">
+        <Col id={classes.heading}>
+        <h1>Login</h1>
+        </Col>
+        </Row>
         </Container>
-        <LoginForm OnLogin={LoginHandler} />    
-    </section>; 
+        <LoginForm OnLogin={LoginHandler} />    </section>; 
 }
 
 export default LoginPage; 
