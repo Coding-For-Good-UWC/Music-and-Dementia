@@ -8,9 +8,16 @@ function PatientList (props)
             <PatientItem
                 id={patient.id}
                 name={patient.name}
-                age={patient.age}
-                image={patient.image}
-                reaction={patient.reaction}
+                location={patient.location}
+                birthdate={patient.birthdate}
+                ethnicity={patient.ethnicity}
+                language={patient.language}
+                gender={patient.gender}
+                // id={patient.id}
+                // name={patient.name}
+                // age={patient.age}
+                // image={patient.image}
+                // reaction={patient.reaction}
             />
         ))}
     </ul>); 

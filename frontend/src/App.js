@@ -15,8 +15,8 @@ function App()
       <Route path='/login' element={ <LoginPage /> } />
       <Route path='/signup' element={ <SignupPage /> } />
       <Route path='/dashboard' element={ <CaregiverDashboard /> } />
-      <Route path='/patient' element={ <PatientPage /> } />
       <Route path='/registerPatient' element={ <PatientRegistration /> } />
+      <Route path='/patient/:id' element={ <PatientPage /> } />
     </Routes>
   </div>; 
 }
