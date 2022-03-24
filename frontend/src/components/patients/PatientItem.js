@@ -1,5 +1,6 @@
 import Card from '../ui/Card';
 import classes from './PatientItem.module.css'; 
+import { Link } from 'react-router-dom'; 
 
 function PatientItem (props)
 {
@@ -14,8 +15,8 @@ function PatientItem (props)
             <p>{props.language}</p>
             <p>{props.gender}</p>
 
-            <button>View Patient</button>
-
+            {/* <button>View Patient</button> */}
+            <Link to={"/patient/" + props.id}>View Patient</Link>
         </Card>
     </li>);
 }
