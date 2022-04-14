@@ -1,29 +1,83 @@
 import MainNavigation from "../components/layout/MainNagivation";
 import PatientList from "../components/patients/PatientList"; 
+import { useState, useEffect } from 'react'; 
 
-const DUMMY_DATA = [
-  {
-    id: 'testpatient1',
-    name: 'Test Patient 1',
-    age: '80', 
-    image: 'https://images.unsplash.com/photo-1500485035595-cbe6f645feb1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&w=1000&q=80', 
-    reaction: '6.8'
-  },
-  {
-    id: 'testpatient2',
-    name: 'Test Patient 2',
-    age: '86', 
-    image: 'https://images.unsplash.com/photo-1500485035595-cbe6f645feb1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&w=1000&q=80', 
-    reaction: '8.4'
-  }
-];
+// const DUMMY_DATA = [
+//   {
+//     id: '1', 
+//     name: 'tuser', 
+//     location: 'SG', 
+//     birthdate: '2000-00-00', 
+//     ethnicity: 'Hokkien', 
+//     language: 'English', 
+//     gender: 'Male', 
+//   }, 
+//   {
+//     id: '2', 
+//     name: 'tuser2', 
+//     location: 'SG', 
+//     birthdate: '2001-00-00', 
+//     ethnicity: 'Hokkien', 
+//     language: 'Chinese', 
+//     gender: 'Female', 
+//   }
+// ];
 
 function CaregiverDashboard ()
 {
-    return (<div>
-        <MainNavigation />
-        <PatientList patients={ DUMMY_DATA } />
-    </div>); 
+    const [isLoading, setIsLoading] = useState (true); 
+    const [loadedPatients, setLoadedPatients] = useState([]); 
+    
+    useEffect (() => 
+    {
+        setIsLoading (true); 
+
+        fetch ('http://127.0.0.1:5000/api/db')
+            .then (response => 
+            {
+                return response.json (); 
+            }).then (data => 
+            {
+                console.log (data); 
+
+                const patients = []; 
+
+                for (const key in data)
+                {
+                    const patient = 
+                    {
+                        // birth: data.birth, 
+                        // ethnicity: data.ethnicity, 
+                        // gender: data.gender, 
+                        // language: data.language, 
+                        // location: data.location, 
+                        // name: data.name
+
+                        id: key, 
+                        ...data[key]
+                    }
+
+                    patients.push (patient); 
+                }
+
+                setIsLoading (false); 
+                setLoadedPatients (patients); 
+            }); 
+    }, [])
+
+    if (isLoading)
+    {
+        return <section>
+            <p>Loading...</p>
+        </section>; 
+    }
+
+    return (
+        <section>
+            <MainNavigation />
+            <PatientList patients={ loadedPatients } />
+        </section>
+    ); 
 }
 
 export default CaregiverDashboard; 
