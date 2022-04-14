@@ -42,23 +42,23 @@ function CaregiverDashboard ()
 
                 const patients = []; 
 
-                // for (const key in data)
-                // {
+                for (const key in data)
+                {
                     const patient = 
                     {
-                        birth: data.birth, 
-                        ethnicity: data.ethnicity, 
-                        gender: data.gender, 
-                        language: data.language, 
-                        location: data.location, 
-                        name: data.name
+                        // birth: data.birth, 
+                        // ethnicity: data.ethnicity, 
+                        // gender: data.gender, 
+                        // language: data.language, 
+                        // location: data.location, 
+                        // name: data.name
 
-                        // id: key, 
-                        // ...data[key]
+                        id: key, 
+                        ...data[key]
                     }
 
                     patients.push (patient); 
-                // }
+                }
 
                 setIsLoading (false); 
                 setLoadedPatients (patients); 

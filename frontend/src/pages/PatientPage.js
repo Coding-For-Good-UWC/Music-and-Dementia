@@ -53,20 +53,3 @@ function PatientPage ()
 }
 
 export default PatientPage; 
-
-
-
-// import { useParams } from "react-router-dom";
-// import { useState, useEffect } from 'react'; 
-
-// function PatientPage ()
-// {
-//     const { id } = useParams (); 
-
-//     return <div>
-//         <h1>Patient Page</h1>
-//         <p>{id}</p>
-//     </div>; 
-// }
-
-// export default PatientPage; 
